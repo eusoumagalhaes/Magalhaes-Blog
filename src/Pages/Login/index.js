@@ -29,8 +29,8 @@ const Login = () => {
 
   return (
     <div className={styles.login}>
-        <h1>Já tem uma conta ? Logue abaixo!</h1>
-        <p>Logue e comece já a compartilhar suas ideias</p>
+        <h1>Already have an account? Log in below!</h1>
+        <p>Log in and start speaking up your mind now</p>
         <form onSubmit={handleSubmit}>
           <label>
             <span>E-Mail:</span>
@@ -38,26 +38,26 @@ const Login = () => {
                type="email" 
                name="email" 
                required 
-               placeholder="E-Mail do usuário" 
+               placeholder="E-Mail" 
                value={email} 
                onChange={(e)=> setEmail(e.target.value)} 
             />
           </label>
           <label>
-            <span>Senha:</span>
+            <span>Password:</span>
             <input 
                type="password" 
                name="password" 
                required 
-               placeholder="Senha" 
+               placeholder="Password" 
                value={password} 
                onChange={(e)=> setPassword(e.target.value)} 
             />
           </label>
-          {!loading && <button className="btn">Entrar</button>}
+          {!loading && <button className="btn">Log-In</button>}
             {loading &&
              (<button className="btn" disabled>
-              Aguarde...
+              Loading...
               </button>)}
             {error && <p className="error">{error}</p>}
         </form>

@@ -4,12 +4,12 @@ import { Link } from 'react-router-dom'
 const About = () => {
   return (
     <div className='styles.about'>
-      <h2>Sobre o Magal <span>Blog</span></h2>
+      <h2>Sobre o Magalhaes <span>Blog</span></h2>
       <p>
-        Este é um projeto de estudo feito com React no front-end e Firebase no back-end
+        Quick Application made for study purposes with React.js on the frontend and Firebase on the backend.
         </p>
         <Link to="/posts/create" className="btn">
-          Criar post
+          Create Post
         </Link>
     </div>
   )

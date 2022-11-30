@@ -20,25 +20,25 @@ const Home = () => {
 
   return (
     <div className={styles.home}>
-      <h1>Nossos posts mais recentes.</h1>
+      <h1>Our most recent posts </h1>
       <form onSubmit={handleSubmit} className={styles.search_form}>
         <input
           type="text" 
-          placeholder='Buscar...' 
+          placeholder='Search...' 
           onChange={(e)=> setQuery(e.target.value)} 
         />
-        <button className='butn btn-dark'>Pesquisar</button>
+        <button className='butn btn-dark'>Search</button>
       </form>
       <div>
-        {loading && <p>Carregando...</p>}
+        {loading && <p>Loading...</p>}
         {posts && posts.map((post) =>(
           <PostDetail key={post.id} post={post} />
         ))}
         {posts && posts.length === 0 && (
           <div className={styles.noposts}>
-            <p>Não foram encontrados posts</p>
+            <p>No posts found</p>
             <Link to="/posts/create" className='btn'>
-              Criar primeiro post
+              Create first post !
             </Link>
           </div>
         )}

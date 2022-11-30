@@ -18,7 +18,7 @@ const Search = () => {
         <div>
             {posts && posts.length === 0 && (
                 <div className='styles.noposts'>
-                  <p>Não foram encontrados posts referentes a sua busca</p>
+                  <p>No posts were found for your search.</p>
                 </div>
             )}
             {posts && posts.map((post) =>(

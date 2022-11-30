@@ -25,7 +25,7 @@ const Register = () => {
     }
 
     if(password !== confirmPassword) {
-      setError("As senhas precisam ser iguais!")
+      setError("Passwords must match!")
       return;
     }
     
@@ -43,17 +43,17 @@ const Register = () => {
   return (
     <div className={styles.register}>
         <h2>Comece a postar agora !</h2> 
-        <h1>Cadastre-se!</h1>
-        <p>Crie seu usuário e já comece a escrever</p>
+        <h1>Register</h1>
+        <p>Create your user and start writing</p>
 
         <form onSubmit={handleSubmit}>
             <label >
-                <span>Nome:</span>
+                <span>Name:</span>
                 <input 
                  type="text"
                  name="displayName"
                  required
-                 placeholder="Nome do usuário"
+                 placeholder="Username"
                  value={displayName}
                  onChange={(e)=> setDisplayName(e.target.value)}
                  />
@@ -64,37 +64,37 @@ const Register = () => {
                  type="email"
                  name="displayEmail"
                  required
-                 placeholder="E-mail do usuário"
+                 placeholder="E-mail"
                  value={email}
                  onChange={(e)=> setEmail(e.target.value)}
                  />
             </label>
             <label >
-                <span>Senha:</span>
+                <span>Password:</span>
                 <input 
                  type="password"
                  name="displayPassword"
                  required
-                 placeholder="Insira sua senha"
+                 placeholder="Insert your password"
                  value={password}
                  onChange={(e)=> setPassword(e.target.value)}
                  />
             </label>
             <label >
-                <span> Repita a Senha:</span>
+                <span> Repeat your password:</span>
                 <input 
                  type="password"
                  name="confirmPassword"
                  required
-                 placeholder="Confirme a sua senha"
+                 placeholder="Confirm your password"
                  value={confirmPassword}
                  onChange={(e)=> setConfirmPassword(e.target.value)}
                  />
             </label>
-            {!loading && <button className="btn">Cadastrar</button>}
+            {!loading && <button className="btn">Register</button>}
             {loading &&
              (<button className="btn" disabled>
-              Aguarde...
+              Loading...
               </button>)}
             {error && <p className="error">{error}</p>}
         </form>

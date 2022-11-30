@@ -28,13 +28,13 @@ const CreatePost = () => {
   try {
     new URL(image);
   } catch (error) {
-    setFormError("A imagem deve ser uma URL !")
+    setFormError("image must be an URL !")
   }
   
   const tagsArray = tags.split(",").map((tag)=> tag.trim().toLowerCase())
 
   if(!title || !image || !tags || !body) {
-    setFormError("Por favor, preencha todos os campos!")
+    setFormError("Please make sure all fields are filled in correctly.")
   }
 
   if(formError) return;
@@ -54,37 +54,37 @@ const CreatePost = () => {
 
   return (
     <div className={styles.create_post}>
-       <h2>Criar Post</h2> 
-       <p>O que está na sua cabeça ? escreva !</p>
+       <h2>Create Post</h2> 
+       <p>What's on your mind ? Write it down !</p>
        <form onSubmit={handleSubmit}>
         <label>
-          <span>Título: </span>
+          <span>Title: </span>
           <input 
              type="text" 
              name='title' 
              required 
-             placeholder='Insira um título...'
+             placeholder='Insert a title...'
              onChange={(e)=> setTitle(e.target.value)}
              value={title}
           />
         </label>
         <label>
-          <span>URL da imagem: </span>
+          <span>Image URL: </span>
           <input 
              type="text" 
              name='image' 
              required 
-             placeholder='Insira uma imagem no seu post.'
+             placeholder='Insert an image in your post.'
              onChange={(e)=> setImage(e.target.value)}
              value={image}
           />
         </label>
         <label>
-          <span>Conteúdo: </span>
+          <span>Content: </span>
           <textarea 
              name='body' 
              required 
-             placeholder='Insira o conteúdo do post' 
+             placeholder='Speak up your mind ' 
              onChange={(e)=> setBody(e.target.value)} 
              value={body}
           />
@@ -95,13 +95,13 @@ const CreatePost = () => {
              type="text" 
              name='tags' 
              required 
-             placeholder='Insira as tags separadas por vírgula.'
+             placeholder='Enter tags separated by a comma.'
              onChange={(e)=> setTags(e.target.value)}
              value={tags}
           />
         </label>
 
-        {!response.loading && <button className="btn">Inserir Post</button>}
+        {!response.loading && <button className="btn">Insert Post</button>}
             {response.loading &&
              (<button className="btn" disabled>
               Aguarde...

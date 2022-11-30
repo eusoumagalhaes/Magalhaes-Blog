@@ -55,11 +55,11 @@ export const useAuthentication = () => {
       let systemErrorMessage
 
       if(error.message.includes("Password")) {
-        systemErrorMessage = "Senha precisa ser maior ou igual 6 caracteres"
+        systemErrorMessage = "Password must be greater than or equal to 6 characters"
       } else if(error.message.includes("email-already")){
-        systemErrorMessage = "Este E-Mail já está sendo ultilizado."
+        systemErrorMessage = "This E-Mail is already being used."
       } else {
-        systemErrorMessage = "Ocorreu um erro !"
+        systemErrorMessage = "An error has occurred!"
       }
 
       setError(systemErrorMessage)
@@ -88,11 +88,11 @@ export const useAuthentication = () => {
       let systemErrorMessage; 
 
       if(error.message.includes("user-not-found")){
-       systemErrorMessage = "Usuário não encontrado."
+       systemErrorMessage = "User not found."
       } else if(error.message.includes("wrong-password")){
-        systemErrorMessage = "Senha incorreta."
+        systemErrorMessage = "Incorrect password."
       } else {
-        systemErrorMessage = "Ocorreu um erro, tente novamente."
+        systemErrorMessage = "An error has occurred, please try again."
       }
 
       setError(systemErrorMessage)
